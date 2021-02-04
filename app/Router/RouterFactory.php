@@ -19,6 +19,7 @@ final class RouterFactory
 	{
 		$router = new RouteList;
 		$router[] = self::createFrontRouter();
+        $router[] = self::createAdminRouter();
 
 		return $router;
 	}
@@ -34,4 +35,16 @@ final class RouterFactory
 
 		return $router;
 	}
+
+
+    /**
+     * @return RouteList
+     */
+    public static function createAdminRouter(): RouteList
+    {
+        $router = new RouteList('Admin');
+        $router->addRoute('<presenter>/<action>', 'Dashboard:default');
+
+        return $router;
+    }
 }
