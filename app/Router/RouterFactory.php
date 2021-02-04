@@ -30,6 +30,13 @@ final class RouterFactory
 //            $router->withModule('Front')
 //            ->addRoute('<presenter>/<action>', 'Homepage:default');
 
+        $router->withPath('cosikdesi')
+            ->addRoute('<presenter>/<action>', [
+                'module' => 'Front',
+                'presenter' => 'Homepage',
+                'action' => 'default',
+            ]);
+
         $router->addRoute('admin/<presenter>/<action>', [
             'module' => 'Admin',
             'presenter' => 'Dashboard',
