@@ -24,11 +24,22 @@ final class RouterFactory
 //        $router->addRoute('<module=admin>/<presenter>/<action>', 'Dashboard:default');
 //        $router->addRoute('<module>/<presenter>/<action>', 'Homepage:default');
 
-        $router->withModule('Front')
-                    ->addRoute('<presenter>/<action>', 'Homepage:default')
+//        $router->withModule('Admin')
+//            ->addRoute('<presenter>/<action>', 'Dashboard:default');
+//
+//            $router->withModule('Front')
+//            ->addRoute('<presenter>/<action>', 'Homepage:default');
 
-                ->withModule('Admin')
-                    ->addRoute('admin/<presenter=Dashboard>/<action>', 'Dashboard:default');
+        $router->addRoute('admin/<presenter>/<action>', [
+            'module' => 'Admin',
+            'presenter' => 'Dashboard',
+            'action' => 'default',
+        ]);
+        $router->addRoute('<presenter>/<action>', [
+            'module' => 'Front',
+            'presenter' => 'Homepage',
+            'action' => 'default',
+        ]);
 		return $router;
 	}
 //
