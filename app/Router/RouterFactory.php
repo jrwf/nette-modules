@@ -35,11 +35,19 @@ final class RouterFactory
             'presenter' => 'Dashboard',
             'action' => 'default',
         ]);
+
+        $router->addRoute('eshop/<presenter>/<action>', [
+            'module' => 'Eshop',
+            'presenter' => 'Homepage',
+            'action' => 'default',
+        ]);
+
         $router->addRoute('<presenter>/<action>', [
             'module' => 'Front',
             'presenter' => 'Homepage',
             'action' => 'default',
         ]);
+
 		return $router;
 	}
 //
