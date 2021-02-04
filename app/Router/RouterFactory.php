@@ -18,7 +18,7 @@ final class RouterFactory
 	public static function createRouter(): RouteList
 	{
 		$router = new RouteList;
-		$router[] = self::createFrontRouter();
+//		$router[] = self::createFrontRouter();
         $router[] = self::createAdminRouter();
 
 		return $router;
@@ -28,13 +28,13 @@ final class RouterFactory
 	/**
 	 * @return RouteList
 	 */
-	public static function createFrontRouter(): RouteList
-	{
-		$router = new RouteList('Front');
-		$router->addRoute('<presenter>/<action>', 'Homepage:default');
-
-		return $router;
-	}
+//	public static function createFrontRouter(): RouteList
+//	{
+//		$router = new RouteList('Front');
+//		$router->addRoute('<presenter>/<action>', 'Homepage:default');
+//
+//		return $router;
+//	}
 
 
     /**
